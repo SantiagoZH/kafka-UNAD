@@ -126,13 +126,6 @@ Batch: 0
 +------------------------------------------+--------+---------+-----------+
 ```
 
-## Próximas Mejoras Recomendadas
-
-- Agregar checkpointing para tolerancia a fallos
-- Implementar alertas para anomalías de precios
-- Persistir resultados en base de datos
-- Crear dashboard de visualización en tiempo real
-- Añadir validación y manejo de errores
 
 ## Troubleshooting
 

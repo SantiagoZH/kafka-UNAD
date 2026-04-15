@@ -92,26 +92,26 @@ query.awaitTermination()
 
 1. **Iniciar Zookeeper** (requerido por Kafka):
 ```bash
-cd c:\kafka
-bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+Iniciar ZooKeeper: sudo /opt/Kafka/bin/zookeeper-server-start.sh /opt/Kafka/config/zookeeper.properties &
 ```
 
 2. **Iniciar Kafka Broker**:
 ```bash
-cd c:\kafka
-bin\windows\kafka-server-start.bat config\server.properties
+Iniciar Kafka: sudo /opt/Kafka/bin/kafka-server-start.sh /opt/Kafka/config/server.properties &
 ```
 
 3. **Crear el topic "transacciones"**:
 ```bash
-cd c:\kafka
-bin\windows\kafka-topics.bat --create --topic transacciones --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+Crear Topic: /opt/Kafka/bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic transacciones
 ```
 
-4. **Ejecutar el consumidor**:
+4. **Ejecutar el productor**:
 ```bash
-cd c:\UNAD\kafka
-python streaming\consumidor_financiero.py
+python3 productor_financiero.py
+```
+5. **Ejecutar el consumidor**:
+```bash
+spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.3 consumidor_financiero.py
 ```
 
 ## Ejemplo de Salida
